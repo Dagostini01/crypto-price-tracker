@@ -20,6 +20,8 @@ interface ExchangeData {
   volume24hour: number;
 }
 
+const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
+
 const Exchanges = () => {
   const [exchangeData, setExchangeData] = useState<ExchangeData[]>([]);
   const [loading, setLoading] = useState(true);
@@ -33,7 +35,7 @@ const Exchanges = () => {
             tsym: 'USD',  // Substitua por qualquer moeda fiduciária de sua escolha
           },
           headers: {
-            'authorization': `bf049ecc49b0632c05fb68509dca42609ae5c773996dbc45c6b4bfbb2b713323`
+            'authorization': `Apikey ${API_KEY}`
           }
         });
 
